@@ -207,19 +207,22 @@ function SkillsCanvas() {
         }}
       ></div>
 
-      <div className="absolute top-8 left-0 w-full text-center pointer-events-none z-10">
-        <h1 className="text-3xl font-bold text-white/50 uppercase tracking-[1em]">Schematics</h1>
+      <div className="absolute top-8 left-0 w-full text-center pointer-events-none z-10 w-full overflow-hidden">
+        <h1 className="text-xl md:text-3xl font-bold text-white/50 uppercase tracking-[0.2em] md:tracking-[1em]">Schematics</h1>
         <p className="text-xs text-gray-500 mt-2 font-mono">DRAG NODES • OBSERVE ELASTICITY</p>
       </div>
 
       {skillData.map((project, index) => {
         // dynamic positioning for mobile
-        const mobileY = 150 + (index * 180); // Stacking vertically
-        const initialPos = isMobile ? { x: window.innerWidth / 2 - 50, y: mobileY } : project.initialPosition;
+        const mobileY = 120 + (index * 160); // Stacking vertically with spacing
+        // Check window existence to be safe, though isMobile guards it
+        const screenW = typeof window !== 'undefined' ? window.innerWidth : 375;
+        // 48 is approx half of 96px (w-24)
+        const initialPos = isMobile ? { x: screenW / 2 - 48, y: mobileY } : project.initialPosition;
 
         return (
             <ProjectSystem 
-                key={project.id} 
+                key={`${project.id}-${isMobile ? 'mobile' : 'desktop'}`} 
                 project={{...project, initialPosition: initialPos}} 
                 isOpen={openProjects.includes(project.id)} 
                 toggleOpen={toggleProject}
