@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: 'Portfolio of Amit G, specializing in Deep Learning and Autonomous Agents.',
 };
 
+import { Analytics } from "@vercel/analytics/next";
+
 export default function RootLayout({
   children,
 }: {
@@ -27,6 +29,7 @@ export default function RootLayout({
         
         <Navbar />
         <main className="flex-grow pt-24">{children}</main>
+        <Analytics />
         <Footer />
       </body>
     </html>
