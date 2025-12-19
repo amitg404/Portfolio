@@ -31,7 +31,7 @@ const projects = [
     fullDesc: "A smart monitoring solution leveraging YOLOv8n to track student movement and occupancy zones within a classroom environment. Provides real-time analytics and automated logging of spatial usage.",
     tech: ["YOLOv8", "OpenCV", "Computer Vision", "Python"],
     highlight: "Zone-based Analytics",
-    color: "from-orange-500 to-red-500"
+    color: "from-teal-400 to-emerald-500"
   },
   {
     title: "Local AI Sync",
