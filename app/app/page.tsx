@@ -23,15 +23,15 @@ export default function Home() {
           </h1>
           <p className="text-gray-400 text-lg md:text-xl max-w-lg leading-relaxed">
             A passionate developer orchestrating intelligence through code. 
-            Specializing in Deep Learning, Computer Vision, and Autonomous Agents.
+            Specializing in **Deep Learning**, **Computer Vision**, and **Autonomous Agents**.
           </p>
           <div className="flex gap-4 pt-4">
             <Link href="/projects" className="glass-card px-8 py-3 rounded-full hover:bg-blue-600/20 transition-all border border-blue-500/50 text-blue-400 font-semibold">
               View Work
             </Link>
-            <Link href="/about" className="glass-card px-8 py-3 rounded-full hover:bg-white/5 transition-all">
-              About Me
-            </Link>
+            <a href="https://github.com/amitg404" target="_blank" rel="noopener noreferrer" className="glass-card px-8 py-3 rounded-full hover:bg-white/5 transition-all">
+              GitHub
+            </a>
           </div>
         </motion.div>
 
